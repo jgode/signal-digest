@@ -1,4 +1,4 @@
-# Kill criteria (2–3 weeks)
+# Kill criteria (2-3 weeks)
 
 Kill or pivot if **any** of these hold:
 

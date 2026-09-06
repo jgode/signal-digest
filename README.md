@@ -6,9 +6,9 @@ Not another Visualping clone. Not an alert firehose. Authenticity over cheap mon
 
 ## Phase 0 (now)
 
-1. Waitlist landing (`web/`) — can be pointed at Jeremy's hosting
-2. Dogfood watchlist (`dogfood/urls.yaml`) — ~15 public pages we actually care about
-3. Kill criteria (`docs/KILL_CRITERIA.md`) — written before we build a multi-tenant SaaS
+1. Waitlist landing (`web/`)  -  can be pointed at Jeremy's hosting
+2. Dogfood watchlist (`dogfood/urls.yaml`)  -  ~15 public pages we actually care about
+3. Kill criteria (`docs/KILL_CRITERIA.md`)  -  written before we build a multi-tenant SaaS
 
 No billing. No multi-tenant product. Validate demand first.
 

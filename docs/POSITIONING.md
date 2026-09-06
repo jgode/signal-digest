@@ -2,7 +2,7 @@
 
 ## Promise
 
-A human-readable weekly digest of *what actually mattered* on a curated watchlist — with named judgment criteria, clickable sources, and no filler.
+A human-readable weekly digest of *what actually mattered* on a curated watchlist  -  with named judgment criteria, clickable sources, and no filler.
 
 ## Not this
 
@@ -16,7 +16,7 @@ A human-readable weekly digest of *what actually mattered* on a curated watchlis
 
 ## ICP (starting)
 
-Founders, PMs, and competitive-intel freelancers who track AI/SaaS vendors’ pricing, terms, and product changes — and are drowning in noise.
+Founders, PMs, and competitive-intel freelancers who track AI/SaaS vendors’ pricing, terms, and product changes  -  and are drowning in noise.
 
 ## Monetization (later)
 
