@@ -1,0 +1,86 @@
+# Dogfood watchlist — public pages only. Polite crawl; honor robots.txt.
+# Focus: AI/SaaS pricing, ToS/privacy, changelogs. Edit freely.
+
+version: 1
+niche: ai-saas-vendor-policy-pricing
+judgment_criteria:
+  - pricing_or_plan_change
+  - terms_or_privacy_material_change
+  - product_capability_or_deprecation_notice
+  - ignore_cosmetic_and_marketing_fluff
+
+watches:
+  - id: openai-pricing
+    url: https://openai.com/api/pricing/
+    kind: pricing
+    why: Flagship model pricing moves the market
+
+  - id: openai-changelog
+    url: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
+    kind: changelog
+    why: Product changes that affect real workflows
+
+  - id: anthropic-pricing
+    url: https://www.anthropic.com/pricing
+    kind: pricing
+    why: Primary competitor pricing signal
+
+  - id: anthropic-claude
+    url: https://www.anthropic.com/claude
+    kind: product
+    why: Positioning / capability shifts
+
+  - id: google-gemini-pricing
+    url: https://ai.google.dev/pricing
+    kind: pricing
+    why: Big-tech pricing pressure
+
+  - id: cursor-pricing
+    url: https://cursor.com/pricing
+    kind: pricing
+    why: Dev-tool peer we care about personally
+
+  - id: github-copilot
+    url: https://github.com/features/copilot#pricing
+    kind: pricing
+    why: Default coding assistant pricing
+
+  - id: vercel-pricing
+    url: https://vercel.com/pricing
+    kind: pricing
+    why: Common infra peer for indie/SaaS builders
+
+  - id: stripe-pricing
+    url: https://stripe.com/pricing
+    kind: pricing
+    why: Payments baseline many SaaS copy
+
+  - id: notion-pricing
+    url: https://www.notion.so/pricing
+    kind: pricing
+    why: Broad SaaS pricing reference
+
+  - id: openai-terms
+    url: https://openai.com/policies/terms-of-use/
+    kind: terms
+    why: Material ToS changes for builders
+
+  - id: anthropic-terms
+    url: https://www.anthropic.com/legal/consumer-terms
+    kind: terms
+    why: Material ToS changes for builders
+
+  - id: openai-privacy
+    url: https://openai.com/policies/privacy-policy/
+    kind: privacy
+    why: Data-use shifts matter to buyers
+
+  - id: linear-changelog
+    url: https://linear.app/changelog
+    kind: changelog
+    why: Clean changelog culture; good dogfood format peer
+
+  - id: railway-pricing
+    url: https://railway.com/pricing
+    kind: pricing
+    why: Hosting alternative signal
