@@ -72,7 +72,7 @@
 </head>
 <body>
   <main>
-    <h1>Signal Digest</h1>
+    <h1>Just the Diff</h1>
     <p class="lede">
       Once a week: a short ranked list of <strong>what actually mattered</strong> on a curated set of AI/SaaS pricing pages, terms, and changelogs  -  with sources you can click and a clear reason each item made the cut.
     </p>
@@ -100,7 +100,7 @@
     </div>
 
     <footer>
-      Built for real humans who are tired of noise.
+      Built for real humans who are tired of noise.<br />soon: justthediff.com
       · <a href="https://github.com/jgode/signal-digest">GitHub</a>
     </footer>
   </main>
@@ -110,7 +110,7 @@
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const email = new FormData(form).get('email');
-      const key = 'signal-digest-waitlist';
+      const key = 'justthediff-waitlist';
       const existing = JSON.parse(localStorage.getItem(key) || '[]');
       if (email && !existing.includes(email)) {
         existing.push(email);

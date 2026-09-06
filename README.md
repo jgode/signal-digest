@@ -1,4 +1,8 @@
-# Signal Digest
+# Just the Diff (`justthediff.com`)
+
+Repo folder/GitHub name remains `signal-digest` for now.
+
+Public site: **justthediff.com** (pending registration).
 
 Weekly ranked digest of **what actually mattered** on a tight watchlist of AI/SaaS vendor pricing, ToS, and changelog pages.
 

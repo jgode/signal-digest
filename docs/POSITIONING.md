@@ -1,3 +1,7 @@
+# Just the Diff
+
+Public brand / domain: **justthediff.com**
+
 # Positioning
 
 ## Promise
