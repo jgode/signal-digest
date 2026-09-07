@@ -1,16 +1,13 @@
-# Claude Code handoff
+# Claude Code handoff — Just the Diff
 
-_Diff Desk writes briefs here. Claude Code checks this file daily at 9:00 AM ET and acts on any brief with `Status: ready`. Overwrite per task or stack several; each brief keeps its own Status line._
+Diff Desk owns this product end-to-end. Claude Code is **on-demand only** when Jeremy starts a session for a heavy eng lift.
 
-## In flight
-none
+Silo: `/Users/jgo/Silo/justthediff/Claude Code.md`
 
-## Briefs
+## Hard constraints
+- Vercel `justthediff` Root Directory = **`web`**
+- Railway project: `divine-endurance`
+- No public real name / personal Gmail / phone; no X until `@justthediff`
 
-### Example (delete when the first real brief lands)
-Status: draft
-Goal:
-Constraints: (Vercel Root Directory=web; public rules; no X until @justthediff)
-Success check:
-Out of scope:
-Files / services likely involved:
+## Current brief
+_None. Jeremy or Diff Desk pastes a brief here only when Claude is called in._
