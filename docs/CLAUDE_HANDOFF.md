@@ -2,7 +2,7 @@
 
 Diff Desk owns this product end-to-end. Claude Code is **on-demand only** when Jeremy starts a session for a heavy eng lift.
 
-Silo: `/Users/jgo/Silo/justthediff/Claude Code.md`
+Silo: `/Users/jgo/Silo/projects/justthediff/Claude Code.md`
 
 ## Hard constraints
 - Vercel `justthediff` Root Directory = **`web`**

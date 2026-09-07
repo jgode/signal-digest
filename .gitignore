@@ -4,3 +4,6 @@ node_modules/
 .env
 .env.*
 !.env.example
+dogfood/snapshots/*
+!dogfood/snapshots/.gitkeep
+dogfood/watch/node_modules/
