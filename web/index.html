@@ -66,6 +66,7 @@
     button:hover { filter: brightness(1.05); }
     .note { font-size: 0.85rem; color: var(--muted); margin-top: 0.75rem; }
     .ok { color: #86efac; display: none; margin-top: 0.75rem; }
+    .fail { color: #fca5a5; display: none; margin-top: 0.75rem; }
     footer { margin-top: 2.5rem; font-size: 0.85rem; color: var(--muted); }
     a { color: var(--accent); }
   </style>
@@ -99,12 +100,13 @@
       <p style="margin: 0.5rem 0 0; color: var(--muted);">
         We’re dogfooding a tight watchlist first. If you want the free pilot digest, leave your email. No spam  -  one list when there’s a pilot ready.
       </p>
-      <form id="waitlist" action="#" method="post">
+      <form id="waitlist" method="post">
         <input type="email" name="email" required placeholder="you@company.com" autocomplete="email" />
         <button type="submit">Join waitlist</button>
       </form>
       
       <p class="ok" id="ok">You’re on the list. We’ll only email about the pilot.</p>
+      <p class="fail" id="fail">Something went wrong. Email hello@justthediff.com and we’ll add you by hand.</p>
     </div>
 
     <footer>
@@ -112,19 +114,36 @@
     </footer>
   </main>
   <script>
+    const API = 'https://api.justthediff.com/waitlist';
     const form = document.getElementById('waitlist');
     const ok = document.getElementById('ok');
-    form.addEventListener('submit', (e) => {
+    const fail = document.getElementById('fail');
+    const btn = form.querySelector('button');
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const email = new FormData(form).get('email');
-      const key = 'justthediff-waitlist';
-      const existing = JSON.parse(localStorage.getItem(key) || '[]');
-      if (email && !existing.includes(email)) {
-        existing.push(email);
-        localStorage.setItem(key, JSON.stringify(existing));
+      const email = String(new FormData(form).get('email') || '').trim();
+      if (!email) return;
+      ok.style.display = 'none';
+      fail.style.display = 'none';
+      btn.disabled = true;
+      try {
+        const res = await fetch(API, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, source: 'web' }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok && data.ok) {
+          form.reset();
+          ok.style.display = 'block';
+        } else {
+          fail.style.display = 'block';
+        }
+      } catch (err) {
+        fail.style.display = 'block';
+      } finally {
+        btn.disabled = false;
       }
-      form.reset();
-      ok.style.display = 'block';
     });
   </script>
 </body>
