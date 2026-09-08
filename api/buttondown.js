@@ -87,9 +87,23 @@ async function createEmail({ subject, body, dryRun }) {
     return { ok: false, skipped: true, reason: "mailer_unconfigured" };
   }
 
+  const footer = [
+    "",
+    "---",
+    "",
+    "You're getting Just the Diff because you signed up at justthediff.com.",
+    "",
+    "[Unsubscribe]({{ unsubscribe_url }})",
+  ].join("\n");
+  const bodyText = String(body || "");
+  const withFooter =
+    bodyText.includes("{{ unsubscribe_url }}") || bodyText.includes("{{unsubscribe_url}}")
+      ? bodyText
+      : `${bodyText.trimEnd()}\n${footer}\n`;
+
   const payload = {
     subject,
-    body,
+    body: withFooter,
     status: dryRun ? "draft" : "about_to_send",
   };
 
