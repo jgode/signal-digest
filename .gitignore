@@ -7,3 +7,5 @@ node_modules/
 dogfood/snapshots/*
 !dogfood/snapshots/.gitkeep
 dogfood/watch/node_modules/
+.mailer-admin-token
+.buttondown-api-key
