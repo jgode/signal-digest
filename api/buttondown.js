@@ -37,7 +37,7 @@ function errorCode(body) {
 
 /**
  * Create (or merge) a subscriber. Leave type unset so Buttondown sends DOI (unactivated).
- * Tries tags: ['waitlist']; on feature_disabled, retries without tags (free plan).
+ * Tries tags: ['digest-email']; on feature_disabled, retries without tags (free plan).
  */
 async function createSubscriber({ email, ipAddress }) {
   if (!isConfigured()) {
@@ -61,7 +61,7 @@ async function createSubscriber({ email, ipAddress }) {
     return { res, data };
   }
 
-  let { res, data } = await post({ ...baseBody, tags: ["waitlist"] });
+  let { res, data } = await post({ ...baseBody, tags: ["digest-email"] });
   if (!res.ok && errorCode(data) === "feature_disabled") {
     ({ res, data } = await post(baseBody));
   }

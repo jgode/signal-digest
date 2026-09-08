@@ -36,7 +36,7 @@ If `BUTTONDOWN_API_KEY` is missing, `POST /waitlist` still saves locally and ret
 ## How DOI and unsubscribe work
 
 1. Visitor submits the waitlist form → API inserts/ignores duplicate in `waitlist_emails` (`status` default `pending`).
-2. If the API key is set, API `POST /v1/subscribers` with `email_address`, optional `ip_address`, header `X-Buttondown-Collision-Behavior: add`. Tags try `["waitlist"]`; on free-plan `feature_disabled`, retry without tags.
+2. If the API key is set, API `POST /v1/subscribers` with `email_address`, optional `ip_address`, header `X-Buttondown-Collision-Behavior: add`. Tags try `["digest-email"]`; on free-plan `feature_disabled`, retry without tags.
 3. Buttondown emails a confirmation link (DOI). Subscriber stays unactivated until click.
 4. Optional webhook `POST /webhooks/buttondown` on `subscriber.confirmed` / `subscriber.unsubscribed` updates local `status`, `confirm_note`, and `unsubscribed_at`. Match is by `buttondown_id` (and email if resolvable).
 5. Unsubscribes: Buttondown appends a footer automatically, and `/admin/send` also appends an explicit `[Unsubscribe]({{ unsubscribe_url }})` line unless the body already includes that variable. Webhook mirrors unsubs into Postgres when configured.
